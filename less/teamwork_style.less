@@ -1,0 +1,586 @@
+@import "variables.less";
+@import "mixins.less";
+
+// Global Components
+
+body {
+    overflow-x: hidden;
+    .body-font;
+}
+
+.text-muted {
+    color: @gray-light;
+}
+
+.text-primary {
+    color: @theme-primary;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+p.large {
+    font-size: 16px;
+}
+
+a {
+    color: @theme-danger;
+}
+
+a:hover {
+    text-decoration: none;
+}
+a:focus,
+a:active,
+a.active {
+    outline: none;
+    color: @theme-primary;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    .heading-font;
+    font-weight: 700;
+}
+
+#port-content {
+  text-align: justify;
+}
+
+.img-centered {
+    margin: 0 auto;
+}
+
+.bg-light-gray {
+    background-color: @gray-lighter;
+}
+
+.bg-darkest-gray {
+    background-color: @gray-darker;
+}
+
+// Restyled Primary Buttons
+
+.btn-primary {
+    .button-variant(@white; @theme-primary; @theme-primary);
+    .heading-font;
+    font-weight: 700;
+}
+
+.btn-xl {
+    .button-variant(@white; @theme-primary; @theme-primary);
+    .heading-font;
+    font-weight: 700;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 20px 40px;
+}
+
+// PROGRESS BAR
+.progress-bar {
+  font-size: 10px;
+  color: @white;
+  background: @theme-danger;
+  text-transform: uppercase;
+}
+
+// NAVBAR
+.navbar-custom {
+    background-color: @white;
+    border-color: transparent;
+    .navbar-brand {
+        color: @name-color;
+        .script-font;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: darken(@name-color, 10%);
+        }
+    }
+    .navbar-collapse {
+        // display: inline-block;
+        text-align: center;
+        border-color: fade(@white, 2%);
+        background-color: transparent;
+    }
+    .navbar-toggle {
+        background-color: @gray-lighter;
+        border-color: @gray-light;
+        .heading-font;
+        color: @gray-darker;
+        font-size: 12px;
+        &:hover,
+        &:focus {
+            background-color: transparent;
+        }
+    }
+    .nav {
+        display: inline-block;
+        border-bottom: @gray-darker 2px;
+        float: none;
+        li {
+          .heading-font;
+          font-weight: 400;
+          letter-spacing: 1px;
+          color: @gray-dark;
+            a {
+                text-align: center;
+                &:hover,
+                &:focus {
+                    color: @theme-primary;
+                    outline: none;
+                }
+            }
+        }
+    }
+    .navbar-nav>.active>a {
+        border-radius: 0;
+        color: @gray-darker;
+        background-color: @white;
+    }
+    .navbar-nav>.active>a:hover,
+    .navbar-nav>.active>a:focus {
+        color: @gray-dark;
+        background-color: darken(@white, 10%);
+    }
+}
+
+@media(min-width:768px) {
+    .navbar-custom {
+        background-color: fade(@white, 90%);
+        padding: 10px 0;
+        align: center;
+        -webkit-transition: padding 0.3s;
+        -moz-transition: padding 0.3s;
+        transition: padding 0.3s;
+        border-bottom: @gray-dark 3px;
+        .navbar-brand {
+            font-size: 2em;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+        .navbar-nav>.active>a {
+            float: none;
+            border-radius: 3px;
+        }
+    }
+}
+
+// Navbar Change on Scroll
+
+@media(min-width:768px) {
+    .navbar-custom.affix {
+        background-color: @white;
+        padding: 7px 0;
+        .navbar-brand {
+            font-size: 1.5em;
+        }
+    }
+}
+
+
+// HEADER
+header {
+    background-image: url('../img/header-bg.png');
+    background-repeat: no-repeat;
+    //background-attachment: scroll;
+    background-position: center center;
+    height: 100%;
+    .background-cover;
+    text-align: center;
+    color: @head-color;
+    .intro-text {
+        padding-top: 100px;
+        padding-bottom: 50px;
+        .intro-lead-in {
+            .serif-font;f
+            font-style: italic;
+            font-size: 22px;
+            line-height: 22px;
+            margin-bottom: 25px;
+        }
+        .intro-heading {
+            .heading-font;
+            font-weight: 300;
+            font-size: 40px;
+            line-height: 50px;
+            margin-bottom: 25px;
+      			padding: 25px;
+        }
+    }
+}
+
+@media(min-width:768px) {
+    header {
+        .intro-text {
+            padding-top: 300px;
+            padding-bottom: 200px;
+            .intro-lead-in {
+                .serif-font;
+                font-style: italic;
+                font-size: 40px;
+                line-height: 40px;
+                margin-bottom: 25px;
+            }
+            .intro-heading {
+                .heading-font;
+                font-weight: 300;
+                font-size: 75px;
+                line-height: 75px;
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
+
+
+// SECTIONS GLOBAL
+section {
+    padding: 100px 0;
+    h2.section-heading {
+        font-size: 40px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    h3.section-subheading {
+        font-size: 16px;
+        .serif-font;
+        text-transform: none;
+        font-weight: 400;
+        margin-bottom: 75px;
+    }
+}
+
+@media(min-width:768px) {
+    section {
+        padding: 150px 0;
+    }
+}
+
+// TEAM SECTION
+section#team{
+  background-color: @white;
+
+  #team-profile {
+    padding-bottom: 30px;
+  }
+
+  #team-member {
+    border: none;
+    padding: 0px 25px 15px 25px;
+  }
+
+  #team-content {
+    text-align: justify;
+    padding: 0px 40px 0px 40px;
+  }
+
+  #bar {
+    padding-top: 10px;
+  }
+
+  #work {
+    padding-top: 3px;
+    color: @gray;
+  }
+
+  .social {
+    padding: 10px 0px 0px 0px;
+  }
+}
+
+// PORTFOLIO SECTION
+#portfolio {
+    .portfolio-item {
+        margin: 0 0 15px;
+        right: 0;
+        .portfolio-link {
+            display: block;
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto;
+            .portfolio-hover {
+                background: fade(@white, 10%);
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: all ease 0.5s;
+                -webkit-transition: all ease 0.5s;
+                -moz-transition: all ease 0.5s;
+                &:hover {
+                    opacity: 1;
+                }
+                .portfolio-hover-content {
+                    position: absolute;
+                    width: 100%;
+                    height: 20px;
+                    font-size: 20px;
+                    text-align: center;
+                    top: 50%;
+                    margin-top: -12px;
+                    color: @white;
+                    i {
+                        margin-top: -12px;
+                    }
+                    h3,
+                    h4 {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+        .portfolio-caption {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: @white;
+            text-align: center;
+            padding: 25px;
+            h4 {
+                text-transform: none;
+                margin: 0;
+            }
+            p {
+                .serif-font;
+                font-style: italic;
+                font-size: 16px;
+                margin: 0;
+            }
+        }
+    }
+    * {
+        z-index: 2;
+    }
+}
+
+@media(min-width:767px) {
+    #portfolio {
+        .portfolio-item {
+            margin: 0 0 30px;
+        }
+    }
+}
+
+
+// CONTACT SECTION
+section#contact {
+	padding-bottom: 0px;
+	color: @white;
+    background-color: @gray-darker;
+    background-image: url('../img/contact-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    .section-heading {
+        color: @white;
+    }
+    .contactform {
+      background-color: transparent;
+      color: @white;
+      padding-bottom: 50px;
+      padding-top: 10px;
+    }
+    .address {
+      padding-top: 30px;
+      padding-bottom: 20px;
+      text-align: center;
+    }
+    .contactbuttons {
+      height: 90px;
+      width: 90px;
+      border-radius: 100%;
+      font-size: 45px;
+      color: @white;
+      background-color: fade(@gray, 40%);
+      line-height: 90px;
+    }
+    #contact-text {
+      padding-top: 15px;
+      line-height: 165%;
+    }
+    #contact-social {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+
+}
+
+// FOOTER
+footer {
+
+    padding: 25px 0;
+    text-align: center;
+	background-color: @white;
+    span.copyright {
+        line-height: 40px;
+        .heading-font;
+        text-transform: none;
+    }
+    ul.quicklinks {
+        margin-bottom: 0;
+        line-height: 40px;
+        .heading-font;
+        text-transform: none;
+    }
+}
+
+// SOCIAL BUTTONS
+ul.social-buttons {
+    margin-bottom: 0;
+    li {
+        a {
+            display: block;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            font-size: 25px;
+            line-height: 50px;
+            color: @theme-primary;
+            outline: none;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+            &:hover,
+            &:focus,
+            &:active {
+                color: @white;
+                background-color: fade(@gray, 40%);;
+            }
+        }
+    }
+}
+
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn:active:focus {
+    outline: none;
+}
+
+// PORTFOLIO MODAL
+.portfolio-modal {
+    .modal-dialog{
+        margin: 0;
+        padding: 3% 4% 5% 4%;
+        height: 100%;
+        width: 100%;
+    }
+    .modal-content {
+        border-radius: 20px;
+        background-clip: border-box;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        border: none;
+        min-height: 100%;
+        padding: 70px;
+        text-align: center;
+        h2 {
+            margin-bottom: 15px;
+            font-size: 3em;
+        }
+        p {
+            margin-bottom: 30px;
+        }
+        p.item-intro {
+            margin: 20px 0 30px;
+            .serif-font;
+            font-size: 16px;
+        }
+        ul.list-inline {
+            margin-bottom: 30px;
+            margin-top: 0;
+        }
+    }
+
+    .close-modal {
+        position: absolute;
+        width:75px;
+        height:75px;
+        background-color:transparent;
+        top: 25px;
+        right: 25px;
+        cursor: pointer;
+        &:hover {
+            opacity: 0.7;
+        }
+        .lr {
+            height:75px;
+            width:1px;
+            margin-left:35px;
+            background-color:@theme-danger;
+            transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            /* IE 9 */
+            -webkit-transform: rotate(45deg);
+            /* Safari and Chrome */
+            z-index:1051;
+            .rl {
+                height:75px;
+                width:1px;
+                background-color:@theme-danger;
+                transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                /* IE 9 */
+                -webkit-transform: rotate(90deg);
+                /* Safari and Chrome */
+                z-index:1052;
+            }
+        }
+    }
+    .modal-backdrop {
+        opacity: 0;
+        display: none;
+    }
+}
+
+// SERVICES
+#services {
+  background-color: @gray-lighter-er;
+  .services-img {
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    font-size: 50px;
+    color: @theme-primary;
+    background-color: @gray-lighter;
+    line-height: 100px;
+  }
+
+  .services-title {
+    padding: 20px 0px 10px 0px;
+  }
+
+  .services-text {
+    text-align: justify;
+  }
+
+}
+
+
+
+// Highlight Color Customization
+
+::-moz-selection {
+    text-shadow: none;
+    background: @theme-primary;
+}
+
+::selection {
+    text-shadow: none;
+    background: @theme-primary;
+}
+
+img::selection {
+    background: transparent;
+}
+
+img::-moz-selection {
+    background: transparent;
+}
+
+body {
+    webkit-tap-highlight-color: @theme-primary;
+}
