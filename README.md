@@ -2,7 +2,7 @@
 ``` git clone git@github.com:sarkaaa/Panda-teamwork.git ```
 
 # Demo
-``` http://sarkachwastkova.cz/templates_demo/panda_teamwork/index.html ```
+http://sarkachwastkova.cz/templates_demo/panda_teamwork/index.html 
 
 ## About
 My first completely done responsive template! HTML5, CSS3, Less, Bootstrap, JS, jquery used. Let me know, if you find some bug.
