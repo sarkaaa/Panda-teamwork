@@ -32,6 +32,11 @@ My first completely done responsive template! HTML5, CSS3, Less, Bootstrap, JS, 
 * fa-yahoo
 
 ## Credits
+* .js file
+```
+http://startbootstrap.com/template-overviews/agency
+```
+
 * Header
 
 ```
